@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <script type="text/javascript" src="./main.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="main_container">
+      <form
+        action="insert.php"
+        method="post"
+        id="register_form"
+        class="form_container"
+      >
+        <p class="header">Rejestracja</p>
+        <div class="first_last_name">
+          <span class="textfield">
+            <label>Imię</label>
+            <input
+              oninput="validate(id, type)"
+              id="first_name"
+              class="textfield_input"
+              type="text"
+              name="first_name"
+              placeholder="Imię"
+            />
+          </span>
+          <span class="textfield">
+            <label>Nazwisko</label>
+            <input
+              oninput="validate(id, type)"
+              id="last_name"
+              class="textfield_input"
+              type="text"
+              name="last_name"
+              placeholder="Nazwisko"
+            />
+          </span>
+        </div>
+        <span class="textfield">
+          <label>Email</label>
+          <input
+            id="email"
+            class="textfield_input"
+            name="email"
+            type="email"
+            placeholder="Email"
+            oninput="validate(id, type)"
+          />
+        </span>
+        <span class="textfield">
+          <label>Hasło</label>
+          <input
+            name="password"
+            id="password"
+            class="textfield_input"
+            type="password"
+            placeholder="Hasło"
+          />
+          <p class="valid_password" id="password_validation">
+            Nieprawidłowe hasło
+          </p>
+        </span>
+        <div class="help_section">
+          <p class="tiny_info">
+            Hasło powinno mieć min. 7 znaków, składać się z: <br />
+            Małych i dużych liter, cyfr oraz znaków specjalnych
+          </p>
+          <a class="password_reminder" href="index.html">
+            Nie pamiętasz hasła?
+          </a>
+        </div>
+        <div class="checkbox">
+          <input
+            id="terms_of_service"
+            onclick="checkboxValidation()"
+            type="checkbox"
+          />
+          <label>Akceptuję warunki </label>
+        </div>
+        <button
+          onclick="passwordValidation()"
+          id="register_btn"
+          class="button"
+          disabled
+          type="submit"
+          name="submit"
+          value="Submit"
+        >
+          Zarejestruj się
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
